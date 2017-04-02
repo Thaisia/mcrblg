@@ -2,7 +2,25 @@
 <p>
   <%= @article.text %>
 </p>
+<hr />
+<hr />
+<hr />
 
+<i>Comments:</i>
+
+<% @article.comments.each do |comm|%>
+  <p>
+    <%= comm.author %> said:
+  </p>
+  <p>
+    <%= comm.body %>
+  </p>
+  <hr />
+<% end%>
+
+<p>
+  <i>Send comment</i>
+</p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
     <%= f.label :author %>
