@@ -12,4 +12,9 @@ describe Article do
     expect(article.subject).to eq 'Ololo lolo'
   end
 
+  it "brings last comment" do
+    article = create(:article_with_comments)
+    expect(article.last_comment.body).to eq "comment body 3"
+  end
+
 end
