@@ -1,18 +1,19 @@
-<h4>All articles</h4>
 
 <% @articles.each do |art| %>
 
   <p>
-    <b><%= art.title %></b>
+    <b><%= link_to art.title, article_path(art)%></b>
   </p>
+
 
   <p>
     <%= art.text %>
   </p>
   <p>
-    <%= link_to 'Details', article_path(art)%>
-  </p>
+    <%= art.created_at.strftime("%Y-%m-%d")%> |
 
+    <%= link_to "Comments: #{art.comments.length}", article_path(art)%>
+  </p>
   <hr />
 
 <% end%>
