@@ -10,6 +10,8 @@
     <%= art.text %>
   </p>
   <p>
+
+    Author: <%= art.user.username%> |
     <%= art.created_at.strftime("%Y-%m-%d")%> |
 
     <%= link_to "Comments: #{art.comments.length}", article_path(art)%>

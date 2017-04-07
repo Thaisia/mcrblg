@@ -7,7 +7,7 @@
 
 <% @article.comments.each do |comm|%>
   <p>
-    <%= comm.author %> said:
+    <%= comm.user.username %> said:
   </p>
   <p>
     <%= comm.body %>

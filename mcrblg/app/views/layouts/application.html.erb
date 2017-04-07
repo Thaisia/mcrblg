@@ -34,7 +34,14 @@
            <li><%= link_to 'New article', new_article_path %></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
+           <li class="notice">
+             <%= notice %>
+           </li>
+           <li class="alert">
+             <%= alert %>
+           </li>
            <% if user_signed_in? %>
+
             <li>
                <div class="navbar-text">Hello, <%= current_user.username %></div>
             </li>
@@ -52,8 +59,8 @@
    </nav>
 
   <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice"></p>
+    <p class="alert"></p>
   </div>
 
   <div class="container">
