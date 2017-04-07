@@ -2,15 +2,18 @@
 <p>
   <%= @article.text %>
 </p>
+<hr />
+<p>
 
-<i>Comments:</i>
+<b>Comments:</b>
+</p>
 
 <% @article.comments.each do |comm|%>
   <p>
     <%= comm.user.username %> said:
   </p>
   <p>
-    <%= comm.body %>
+    <i><%= comm.body %></i>
   </p>
   <hr />
 <% end%>
@@ -20,8 +23,7 @@
 </p>
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :body %> <br />
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :class => "form-control", :rows => "5"  %>
   </p>
   <p>
     <%= f.submit %>
